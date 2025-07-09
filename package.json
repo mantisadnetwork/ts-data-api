@@ -17,7 +17,7 @@
     "delbridge"
   ],
   "author": "ArturGC",
-  "license": "Apache-2.0",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "h3": "1.15.3",
     "jsonwebtoken": "9.0.2",
