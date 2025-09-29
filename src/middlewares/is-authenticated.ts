@@ -21,13 +21,9 @@ export const Errors = {
 type IsAuthenticated = (event: h3.H3Event) => void | never;
 
 export const isAuthenticated: IsAuthenticated = (event) => {
-  const authorization = h3.getHeader(event, "Authorization");
+  const authorization = h3.getHeader(event, "apiKey");
 
-  if (authorization == null) throw Errors.noHeader();
-
-  const token = authorization.replace("Bearer ", "");
-
-  verify(token, envs.JWT_SECRET, (err) => {
-    if (err != null) throw Errors.invalidToken(err);
-  });
+  if(authorization !== "SWCzxNTdwUxtDNAvs1lmhH3JuiJJ1tKezByhl5T86JQb4NJByr4T1lPCG8UAHrYV"){
+    throw Errors.noHeader();
+  }
 };

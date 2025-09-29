@@ -9,17 +9,9 @@ export const ObjectIdSchema = z
   .transform((val) => new ObjectId(val));
 
 export const getBodyParser = (contentType: string | undefined) => {
-  if (contentType === "application/ejson") {
     return { contentType: "application/ejson", parser: EJSON.parse };
-  }
-
-  return { contentType: "application/json", parser: JSON.parse };
 };
 
 export const getBodySerializer = (contentType: string | undefined) => {
-  if (contentType === "application/ejson") {
-    return { contentType: "application/ejson", serializer: EJSON.stringify };
-  }
-
-  return { contentType: "application/json", serializer: JSON.stringify };
+  return { contentType: "application/ejson", serializer: EJSON.stringify };
 };
