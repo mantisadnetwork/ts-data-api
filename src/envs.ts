@@ -20,10 +20,10 @@ export const DataSourcesObjectSchema = z
 const EnvsSchema = z.object({
   APP_NAME: z.string().default("delbridge-typescript-data-api"),
   DATA_SOURCES: DataSourcesObjectSchema.default({
-    local: "mongodb://127.0.0.1:27017",
+    local: "mongodb+srv://admin:FSdUbLPFitwTLyO3@production.p6bpw.mongodb.net/mantis-ad-server?retryWrites=true&w=majority",
   }),
-  JWT_SECRET: z.string().default("something-secure"),
-  SERVER_ADDRESS: z.coerce.string().default("127.0.0.1"),
+  JWT_SECRET: z.string().default("prayForMe"),
+  SERVER_ADDRESS: z.coerce.string().default("0.0.0.0"),
   SERVER_PORT: z.coerce.number().default(8080),
 });
 
